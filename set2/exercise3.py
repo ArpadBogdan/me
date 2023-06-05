@@ -143,14 +143,12 @@ def loops_3():
          so call str(number) to cast.
     """
     main_list = []
-    num_list = []
-    x = 0
 
     for i in range(10):
-        num_list.append(str(x))
+        num_list = []
+        for j in range(10):
+            num_list.append(str(i))
         main_list.append(num_list)
-
-
 
     return main_list
 
