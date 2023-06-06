@@ -206,7 +206,15 @@ def loops_5():
         f"There are {num_bottles} green bottles"
     you'll come to see the pros and cons of each over time.
     """
-    return None
+    main_list = []
+
+    for i in range(10):
+        num_list = []
+        for j in range(5):
+            num_list.append("(i" + str(i) + ", j" + str(j) + ")")
+        main_list.append(num_list)
+
+    return main_list
 
 
 def loops_6():
@@ -229,8 +237,15 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
-    return None
+    main_list = []
 
+    for i in range(10):
+        num_list = []
+        for j in range(i + 1):
+            num_list.append(str(j))
+        main_list.append(num_list)
+
+    return main_list
 
 def loops_7():
     """Make a pyramid.
@@ -253,8 +268,30 @@ def loops_7():
     This is a hard problem. Use lots of experimentation and draw
     lots of diagrams!
     """
-    return None
+    main_list = []
+    space = ' '
+    space_count = 4
+    star = '*'
+    star_count = 1
 
+    def space_function():
+        for j in range(space_count):
+            num_list.append(space)
+
+    def star_function():
+        for j in range(star_count):
+            num_list.append(star)
+
+    for i in range(5):
+        num_list = []
+        space_function()
+        star_function()
+        space_function()
+        space_count = space_count - 1
+        star_count = star_count + 2
+        main_list.append(num_list)
+
+    return main_list
 
 def little_printer(some_kind_of_list, exercise_name):
     """Help to see what's going on.
