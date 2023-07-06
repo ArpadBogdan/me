@@ -73,10 +73,20 @@ def advancedGuessingGame():
         if guessedNumber == actualNumber:
             print(f"You got it!! It was {actualNumber}")
             guessed = True
-        elif guessedNumber < actualNumber:
+        elif (
+            guessedNumber < actualNumber
+            and guessedNumber > lowerBound
+            or guessedNumber == lowerBound
+        ):
             print("Too small, try again :'(")
-        else:
+        elif (
+            guessedNumber > actualNumber
+            and guessedNumber < upperBound
+            or guessedNumber == upperBound
+        ):
             print("Too big, try again :'(")
+        elif guessedNumber > upperBound or guessedNumber < lowerBound:
+            print("Thats outside the bounds!!!! >:(")
     return "You got it!"
     # the tests are looking for the exact string "You got it!". Don't modify that!
 
