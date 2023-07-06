@@ -62,7 +62,7 @@ def stubborn_asker(low, high):
     status = False
     while status != True:
         print("Enter a number between low and high")
-        guess = int(input())
+        guess = input()
         if guess > low and guess < high:
             print("OK")
             status = True
@@ -82,11 +82,12 @@ def not_number_rejector(message):
     while status != True:
         print("Enter a number:")
         message = input()
-        if message.isnumeric() == True:
-            message = int(message)
+        if message.isnumeric():
+            print("That is a number")
             status = True
         else:
-            print("This is not a number")
+            print("That is not a number")
+            status = True
 
     return message
 
@@ -97,7 +98,17 @@ def super_asker(low, high):
     Combine what you learnt from stubborn_asker and not_number_rejector
     to make a function that does it all!
     """
-    return None
+    status = False
+
+    while status != True:
+        guess = input()
+        if guess.isnumeric() == True:
+            if guess > low and guess < high:
+                status = True
+        else:
+            status = True
+
+    return guess
 
 
 if __name__ == "__main__":
