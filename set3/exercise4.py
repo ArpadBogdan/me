@@ -23,8 +23,23 @@ def binary_search(low, high, actual_number):
     """
     tries = 0
     guess = 0
-
+    found = False
     # Write your code in here
+    guess = round((high + low) / 2)
+
+    while not found:
+        print(f"The guess is {guess} ")
+        if guess == actual_number:
+            tries = tries + 1
+            found = True
+        elif guess > actual_number:
+            tries = tries + 1
+            high = guess
+            guess = round((guess + low) / 2)
+        elif guess < actual_number:
+            tries = tries + 1
+            low = guess
+            guess = round((guess + high) / 2)
 
     return {"guess": guess, "tries": tries}
 
